@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Recommender</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            flex-direction: column;
+        }
+        #container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #1e1e1e;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #28a745; /* Green */
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 0.75rem;
+            font-size: 1rem;
+            width: calc(100% - 1.5rem);
+            background-color: #252525;
+            color: #e0e0e0;
+            border: 1px solid #333;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #28a745; /* Green */
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #results {
+            margin-top: 1.5rem;
+        }
+        #results h3 {
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        ul { 
+            list-style: none; 
+            padding-left: 0; 
+        }
+        li {
+            background-color: #2a2a2a;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem;
+            border-radius: 4px;
+        }
+        .status {
+            color: #aaa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>Anime Recommender</h1>
+        
+        <input type="text" id="animeInput" placeholder="Enter an anime name..." list="anime-names">
+        <datalist id="anime-names">
+            {% for name in anime_names %}
+                <option value="{{ name }}">
+            {% endfor %}
+        </datalist>
+        
+        <button id="recButton">Get Recommendations</button>
+        
+        <div id="results">
+            <ul id="recommendationList">
+                <li class="status">Enter an anime to get started...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/static/js/recommandation.js"></script>
+</body>
+</html>
