@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+firebase-admin
+pandas
+jinja2
+dotenv
+python-multipart
