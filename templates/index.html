@@ -62,7 +62,7 @@
             z-index: -1;
         }
 
-        #container {
+        .container {
             width: 90%;
             max-width: 700px;
             background: var(--glass-bg);
@@ -72,27 +72,23 @@
             border-radius: 16px;
             padding: 2.5rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-            position: relative;
         }
-
-        #container:hover {
+        
+        .container:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         h1 {
             color: var(--text-color);
-            text-align: center;
             margin-bottom: 1.5rem;
             font-weight: 600;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             position: relative;
             display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
         h1::after {
@@ -105,64 +101,48 @@
             background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
         }
 
-        .input-group {
-            position: relative;
+        p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .status-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
             margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
         }
 
-        input[type="text"] {
-            width: 100%;
-            padding: 1rem 1rem;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            outline: none;
-        }
-
-        input[type="text"]:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.25);
-        }
-
-        input[type="text"]::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        button {
-            padding: 0.9rem 1.5rem;
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
             font-size: 1rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border: none;
             cursor: pointer;
-            width: 100%;
             border-radius: 8px;
             font-weight: 500;
             letter-spacing: 0.5px;
             box-shadow: 0 4px 15px rgba(123, 104, 238, 0.3);
             transition: all 0.3s ease;
+            text-decoration: none;
             position: relative;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
-        button:hover {
+        .btn:hover {
             box-shadow: 0 6px 20px rgba(123, 104, 238, 0.4);
             transform: translateY(-2px);
         }
 
-        button:active {
+        .btn:active {
             transform: translateY(0);
             box-shadow: 0 2px 10px rgba(123, 104, 238, 0.2);
         }
 
-        button::before {
+        .btn::before {
             content: "";
             position: absolute;
             top: 0;
@@ -173,107 +153,38 @@
             transform: translateX(-100%);
         }
 
-        button:hover::before {
+        .btn:hover::before {
             transform: translateX(100%);
             transition: transform 0.8s ease;
         }
 
-        #results {
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        #results h3 {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            color: #e0e0ff;
-            font-weight: 500;
-        }
-
-        ul { 
-            list-style: none; 
-            padding-left: 0; 
-        }
-
-        li {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(5px);
-            margin-bottom: 0.8rem;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        li:hover {
-            transform: translateX(5px);
-            background: rgba(255, 255, 255, 0.08);
-            border-left: 3px solid var(--primary-color);
-        }
-
-        .status {
-            color: rgba(255, 255, 255, 0.7);
-            font-style: italic;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            #container {
-                width: 95%;
-                padding: 1.5rem;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
             }
-
-            h1 {
-                font-size: 1.8rem;
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
             }
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1>Anime Recommender</h1>
-        
-        <div class="input-group">
-            <input type="text" id="animeInput" placeholder="Enter an anime name..." list="anime-names">
-            <datalist id="anime-names">
-                {% for name in anime_names %}
-                    <option value="{{ name }}">
-                {% endfor %}
-            </datalist>
+    <div class="container">
+        <div class="status-icon">
+            <i class="fas fa-check-circle"></i>
         </div>
-        
-        <button id="recButton">
-            <i class="fas fa-search" style="margin-right: 8px;"></i>
-            Get Recommendations
-        </button>
-        
-        <div id="results">
-            <ul id="recommendationList">
-                <li class="status">Enter an anime to get started...</li>
-            </ul>
-        </div>
+        <h1>Welcome to Anime Recommender!</h1>
+        <p>Your server is running correctly. Ready to discover new anime?</p>
+        <a href="/recommandation" class="btn">
+            <i class="fas fa-rocket" style="margin-right: 8px;"></i>
+            Go to Recommender
+        </a>
     </div>
-
-    <script src="/static/js/recommandation.js"></script>
 </body>
 </html>
