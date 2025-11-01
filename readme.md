@@ -7,7 +7,6 @@ This project is a web-based Anime Recommendation System built with Python and Fa
 * **Backend:** Python, [FastAPI](https://fastapi.tiangolo.com/), [Uvicorn](https://www.uvicorn.org/)
 * **Data Science & ML:** [Pandas](https://pandas.pydata.org/), [Scikit-learn](https://scikit-learn.org/stable/) (for similarity matrix), [Jupyter Notebook](https://jupyter.org/)
 * **Frontend:** HTML, JavaScript
-* **Database/Auth:** [Firebase](https://firebase.google.com/) (using `firebase-admin`)
 * **Templating:** [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/)
 * **Utilities:** `python-dotenv` (for environment variables), `python-multipart` (for form data)
 
