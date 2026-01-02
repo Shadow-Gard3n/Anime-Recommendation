@@ -2,6 +2,10 @@
 
 This project is a web-based Anime Recommendation System built with Python and FastAPI. It uses a content-based filtering model (based on anime genres) to suggest new anime based on a user's selection.
 
+## 🚀 Live Demo
+You can try out the live application here:
+**[Anime Recommender Live](https://shadowgard3n-animerecommendation-backend.hf.space/recommandation)**
+
 ## 🚀 Technology Used
 
 * **Backend:** Python, [FastAPI](https://fastapi.tiangolo.com/), [Uvicorn](https://www.uvicorn.org/)
